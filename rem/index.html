@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+<link rel="stylesheet" type="text/css" href="base.css">
+<title>rem测试</title>
+<style>
+	
+	h1{height:3rem;font-size:1rem;line-height:1rem;}
+	div{width:10rem;height:10rem;background:#f00;font-size:1rem;}
+</style>
+</head>
+<h2>像素计算器：</h2> 
+输入屏幕宽度为720的px值：<input type="number" id="px" autofocus/><br> 
+输出rem值：<input type="text" id="rem"/><br> 
+对应屏幕宽度360的px值：<input type="text" id="px360"/><br> 
+对应屏幕宽度320的px值：<input type="text" id="px320"/><br> 
+<div id="s">sssssssssss</div>
+<body>
+</body>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script type="text/javascript" >
+	$().ready(function(){
+		$('#px').keyup(function(){
+			var px=$(this).val();
+			var rem=px/24;
+			//rem=Math.round(rem*100)/100000
+			$('#rem').val(rem+'rem');
+			$('#px360').val(rem*14);
+			$('#px320').val(rem*12);
+		})
+	})
+</script>
+</html>
